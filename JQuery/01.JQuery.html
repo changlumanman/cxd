@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <style>
+  div{
+    height: 200px;
+    background-color: red;
+    margin:10px;
+    display: none;
+    
+  }
+
+
+
+</style>
+
+
+</head>
+<body>
+	<input type="button" value="显示" id="btn1" />
+    <input type="button" value="设置文字" id="btn2">
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+   $(Document).ready(function(){
+      $("#btn1").click(function(){
+      	$("div").show(1000);
+      });
+     
+     $("#btn2").click(function(){
+      $("div").text("我是内容");
+     });
+   });
+
+</script>
+</body>
+</html>

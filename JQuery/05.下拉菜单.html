@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <style>
+  *{
+  	padding: 0;
+  	margin: 0;
+  }
+  ul{
+  	list-style: none;
+  }
+   .wrap a{
+   	 display: block;
+   	 width: 100px;
+   	 height: 30px;
+   	 line-height: 30px;
+   	 color: #000;
+   	 text-align: center;
+   	text-decoration: none;
+   }
+
+ .wrap{
+    width: 330px;
+    height: 30px;
+    background-image:url(imgs/bg.jpg);
+    /*background-repeat: none;*/
+    margin: 100px auto 0;
+    padding-left: 10px;
+    
+ }
+
+  .wrap li{
+   background-image:url(imgs/libg.jpg);
+    
+
+  }
+
+  .wrap > ul >li {
+  	float: left;
+  	margin-right: 10px;
+  	position: relative;
+
+  }
+
+  .wrap li ul{
+  	position:absolute;
+  	top: 30px;
+  	display: none;
+  }
+
+
+
+
+
+</style>
+
+
+
+
+</head>
+<body>
+  <div class="wrap">
+   <ul>
+      <li>
+        <a href="#">一级菜单1</a>
+        <ul>
+           <li><a href="#">二级菜单11</a></li>
+           <li><a href="#">二级菜单12</a></li>
+           <li><a href="#">二级菜单13</a></li>
+         </ul> 
+      </li>
+      <li>
+      	<a href="#">一级菜单2</a>
+        <ul>
+           <li><a href="#">二级菜单21</a></li>
+           <li><a href="#">二级菜单22</a></li>
+           <li><a href="#">二级菜单23</a></li>
+         </ul>
+      </li>
+      <li>
+        <a href="#">一级菜单3</a>
+         <ul>
+           <li><a href="#">二级菜单31</a></li>
+           <li><a href="#">二级菜单32</a></li>
+           <li><a href="#">二级菜单33</a></li>
+         </ul>
+      </li>
+   </ul>
+  </div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+       var $li=$(".wrap>ul>li")
+
+      $li.mouseover(function(){
+      //$(this).children("ul").css("display","block");
+      $(this).children("ul").show();
+    });
+
+      $li.mouseout(function(){
+       $(this).children("ul").hide();
+      });
+
+    });
+
+  
+
+
+
+
+
+</script>
+
+	
+</body>
+</html>

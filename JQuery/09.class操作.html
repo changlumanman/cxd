@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+   *{
+   	padding: 0;
+   	margin: 0;	
+   }
+
+   .basic{
+    font-size:16px;
+    color: pink;
+    font-weight: 400; 
+
+   }
+
+   .bigger{
+   	font-size:32px;
+   	color: deeppink;
+   	font-weight: 700;
+   }
+
+
+
+</style>
+
+
+</head>
+<body>
+  <div id="wrap">
+
+  	<input type="button" value="添加basic类" id="btn1" />
+  	<input type="button" value="添加bigger类" id="btn2" />
+  	<input type="button" value="删除bigger类" id="btn3" />
+  	<input type="button" value="toggle" id="btn4" />
+   <ul>
+   <li>斗鱼</li>
+   <li>虎牙</li>
+   <li>熊猫</li>
+   <li>全民</li>
+   </ul>
+  </div>
+  <script src="jquery-1.12.4.js"></script>
+ <script>
+     $(function(){
+      $("#wrap").eq(0).click(function(){
+
+         $("li").addClass("basic");
+
+      });
+
+      $("#btn2").click(
+      function(){
+           $("li").addClass("bigger");
+      });
+      
+
+      $("input").eq(2).click(function(){
+       $("li").removeClass("bigger");
+
+
+      });
+
+      $("input:eq(3)").click(function(){
+         $("li").toggleClass("basic");
+
+      });
+      
+
+
+
+     });
+
+
+
+ </script>
+
+
+	
+</body>
+</html>

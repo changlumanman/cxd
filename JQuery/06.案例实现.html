@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+  *{
+  	padding: 0;
+  	margin: 0;
+  }
+  body{
+  	background-color: #000;
+  }
+
+  ul {
+  	list-style: none;
+  }
+
+  a{
+  	text-decoration: none;
+  }
+  
+   .wrap{
+      margin:100px auto 0;
+      width: 630px;
+      height: 394px;
+      overflow: hidden;
+      padding: 10px 0 0 10px;
+      background-color: #000;
+      border: 1px solid #fff;
+      
+
+      }
+
+
+  .wrap li{
+  	margin:0 10px 10px 0;
+  	float: left;
+  }
+
+  .wrap img{
+  	border:0;
+  }
+
+
+
+
+   </style>
+</head>
+<body>
+	<div class="wrap">
+     <ul>
+     <li><a href="#"><img src="imgs/01.jpg" alt=""></a></li>
+     <li><a href="#"><img src="imgs/02.jpg" alt=""></a></li>
+     <li><a href="#"><img src="imgs/03.jpg" alt=""></a></li>
+     <li><a href="#"><img src="imgs/04.jpg" alt=""></a></li>
+     <li><a href="#"><img src="imgs/05.jpg" alt=""></a></li>
+     <li><a href="#"><img src="imgs/06.jpg" alt=""></a></li>
+     </ul>
+	</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+ $(function(){
+  var $li=$("li");
+  $li.mouseover(function(){
+   $(this).css("opacity","1").siblings().css("opacity","0.4");
+    
+  });  
+  
+  $(".wrap").mouseout(function(){
+     $(this).find("li").css("opacity","1")
+
+  });
+
+
+ });
+
+
+
+
+</script>
+
+</body>
+</html>
