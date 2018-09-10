@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+        img{
+            vertical-align: top;
+        }
+
+        .box{
+            width: 730px;
+            height: 454px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 1px solid #cccccc;
+        }
+
+        .inner{
+            width: 730px;
+            height: 454px;
+            background-color: pink;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .inner ul{
+            width: 1000%;
+        position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .inner li{
+            float: left;
+        }
+        .square {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        .square span{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            text-align: center;
+            line-height: 16px;
+            cursor: pointer;
+        }
+        .square span.current{
+            background-color: orangered;
+            color: #ffffff;
+        }
+
+        #focusD{
+            display: none;
+        }
+
+        #focusD span{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top:50%;
+            margin-top:-20px;
+            background: #000000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            opacity: 0.3;
+            border: 1px solid #ffffff;
+
+        }
+        #focusD #right{
+            right: 5px;
+            left:auto;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<div class="box" id="box">
+    <div class="inner">  <!--相框-->
+     <ul>
+         <li><a href="#"><img src="images/1.jpg" alt="" /> </a></li>
+         <li><a href="#"><img src="images/2.jpg" alt="" /> </a></li>
+         <li><a href="#"><img src="images/3.jpg" alt="" /> </a></li>
+         <li><a href="#"><img src="images/4.jpg" alt="" /> </a></li>
+         <li><a href="#"><img src="images/5.jpg" alt="" /> </a></li>
+         <li><a href="#"><img src="images/6.jpg" alt="" /> </a></li>
+
+     </ul>
+      <div class="square">
+          <span class="current">1</span>
+          <span class="">2</span>
+          <span class="">3</span>
+          <span class="">4</span>
+          <span class="">5</span>
+          <span class="">6</span>
+      </div>
+
+        <div id="focusD">
+            <span id="left">&lt;</span>
+             <span id="right">&gt;</span>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="common.js"></script>
+<script>
+     function animate(element,target) {
+        clearInterval(element.timeId);
+        element.timeId=setInterval(function () {
+            var current=element.offsetLeft;
+            var step=10;
+            step=current<target?step:-step;
+            current+=step;
+
+            if (Math.abs(target-current)>Math.abs(step)){
+                element.style.left=current+"px";
+            }else{
+                element.style.left=target+"px";
+                clearInterval(element.timeId);
+
+            }
+        },10);
+    }
+
+var box=getElement("box");
+var inner =box.children[0];
+var imgWidth=inner.offsetWidth;
+var ulObjs=inner.children[0];
+var spanObjs =inner.children[1].children;
+var focusD =getElement("focusD");
+var left=getElement("left");
+var right=getElement("right");
+
+var list =ulObjs.children;
+var pic =0;
+
+    for(var i=0;i<spanObjs.length;i++){
+        spanObjs[i].setAttribute("index",i);
+        spanObjs[i].onmouseover=function () {
+            for(var j=0;j<spanObjs.length;j++){
+             spanObjs[j].removeAttribute("class")
+            }
+            this.className="current";
+            var index=this.getAttribute("index");
+             animate(ulObjs,-index*imgWidth);
+
+
+        };
+
+    }
+    ulObjs.appendChild(ulObjs.children[0].cloneNode(true));
+    //自由移动
+    function clickHandle(){
+
+     if(pic==list.length-1){
+      pic=0;
+      ulObjs.style.left=-pic*imgWidth+"px";
+     }
+     pic++;
+     animate(ulObjs,-pic*imgWidth);
+    
+    if (pic==list.length-1) {
+     spanObjs[0].className="current";
+     spanObjs[spanObjs.length-1].className="";
+    }else{
+      for(var i=0;i<spanObjs.length;i++){
+       // spanObjs[i].className="";
+      inner.children[1].children[i].className="";
+      }
+        // spanObjs[i].className="current";
+        inner.children[1].children[pic].className="current";
+    }
+
+    }
+
+    var timeId=setInterval(clickHandle,1000);
+
+
+    box.onmouseover=function () {
+
+        focusD.style.display="block";
+        clearInterval(timeId);
+    };
+
+    box.onmouseout=function () {
+        focusD.style.display="none";
+        timeId=setInterval(clickHandle,1000);
+    };
+
+     pic=0;
+
+    right.onclick=clickHandle;
+        
+
+     left.onclick=function () {
+    if (pic==0){
+        pic=list.length-1;
+        ulObjs.style.left=-pic*imgWidth+"px";
+        
+    }
+    pic--;
+    animate(ulObjs,-pic*imgWidth);
+    for(var i=0;i<spanObjs.length;i++){
+        spanObjs[i].className=""
+    }
+    spanObjs[pic].className="current";
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+</html>

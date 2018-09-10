@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script>
+function  Person(name,sex){
+ this.name=name;
+ this.sex=sex;  
+
+ this.sayHi=function(x,y){
+
+  console.log((x+y)+"====="+this);
+ 
+ };
+
+}
+
+function Student(){
+   
+
+}
+
+
+    var stu = new Student();
+
+    var per =new Person("cxd",22); 
+
+    per.sayHi();
+
+    per.sayHi.call(stu,20,21);
+    console.log("======");
+   
+    per.sayHi.apply(stu,[20,21]); 
+
+
+
+
+</script>
+
+	
+</body>
+</html>

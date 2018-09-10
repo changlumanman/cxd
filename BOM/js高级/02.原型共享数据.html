@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+ function Student(name,age,sex){
+
+   this.name=name;
+   this.age=age;
+   this.sex=sex;
+
+
+   }
+
+   Student.prototype.heigh="180cm";
+   Student.prototype.weight="70kg";
+
+   Student.prototype.eat=function(){
+       console.log("I have done.");
+
+   }
+
+   Student.prototype.study=function(){
+     console.log("I am studying.");
+   }
+
+ 
+
+ var stu =new Student("cxd",22,"m");
+
+console.log(stu);
+
+
+
+</script>
+</html>

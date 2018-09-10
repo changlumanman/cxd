@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    #btn{
+        display: block;
+    }
+    textarea{
+        width: 200px;
+        height:200px;
+
+    }
+
+
+</style>
+<body>
+<textarea>
+    请仔细阅读协议请仔细阅读协议请仔细阅读协议请仔细阅读协议请仔细阅读协议请仔细阅读协议请仔细阅读协议
+
+
+
+
+</textarea>
+<input type="button" value="请仔细阅读协议（5）" id="btn" disabled="disabled" />
+<script src="common.js"></script>
+<script>
+    var time = 5;
+     var timeId = setInterval(function () {
+        time--;
+         getElement("btn").value="请仔细阅读协议（"+time+")";
+        if(time<=0){
+            clearInterval(timeId);
+            getElement("btn").disabled=false;
+            getElement("btn").value="我同意";
+        }
+
+
+    },1000)
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

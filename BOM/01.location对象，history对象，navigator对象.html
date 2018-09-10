@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="跳过去" id="btn1" />
+<input type="button" value="前进" id="btn2"  />
+<script src="common.js"></script>
+<script>
+console.log(window.location.hash);
+console.log(window.location.host);
+console.log(window.location.hostname);
+console.log(window.location.pathname);
+console.log(window.location.port);
+console.log(window.location.protocol);
+console.log(window.location.search);
+</script>
+
+
+<script>
+    getElement("btn1").onclick=function () {
+        window.location.href="history test.html";
+    };
+    getElement("btn2").onclick=function () {
+        window.history.forward();
+    }
+
+
+</script>
+
+<script>
+    console.log(window.navigator.userAgent);
+    console.log(window.navigator.platform);
+
+
+</script>
+</body>
+</html>

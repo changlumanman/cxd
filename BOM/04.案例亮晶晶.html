@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    div{
+        width: 600px;
+        height: 600px;
+        border: 2px solid red;
+        background-color: black;
+        position: relative;
+    }
+     span{
+         font-size: 30px;
+         color: yellow;
+         position: absolute;
+     }
+
+</style>
+<body>
+<input type="button" value="亮起来" id="btn" />
+
+<div id="dv">
+
+</div>
+<script src="common.js"></script>
+<script>
+    getElement("btn").onclick=function () {
+        var timeId=setInterval(function () {
+            getElement("dv").innerHTML="<span>☆<span />";
+            var x=parseInt(Math.random()*600+1);
+            var y=parseInt(Math.random()*600+1);
+            getElement("dv").firstElementChild.style.left=x+"px";
+            getElement("dv").firstElementChild.style.top=y+"px";
+        },10);
+
+
+
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>

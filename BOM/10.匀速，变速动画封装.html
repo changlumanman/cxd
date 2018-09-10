@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+ #dv1{
+ 	width: 200px;
+ 	height: 200px;
+ 	background-color: pink;
+ 	top: 50;
+ 	left: 0;
+ 	position:absolute;
+
+ }
+
+
+</style>
+
+<body>
+
+<input type="button" value="点击到400px" id="btn1" />
+<input type="button" value="点击到800px" id="btn2" />
+<div id="dv1"></div>
+
+
+
+<script src="common.js"></script>
+<script>
+getElement("btn1").onclick=function(){
+
+   bAnimate(getElement("dv1"),400);
+
+};
+
+getElement("btn2").onclick=function(){
+	bAnimate(getElement("dv1"),800);
+}
+
+    
+
+
+</script>
+
+</body>
+</html>

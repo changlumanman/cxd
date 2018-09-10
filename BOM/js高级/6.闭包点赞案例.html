@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<input type="button" value="(赞1)">
+<input type="button" value="(赞1)">
+<input type="button" value="(赞1)">
+<input type="button" value="(赞1)">
+
+
+<script type="text/javascript">
+
+
+    function getElement(tagname) {
+
+        return document.getElementsByTagName(tagname);
+
+    }
+
+    function f1() {
+        var value = 1;
+        return function () {
+
+            this.value="(赞"+(++value)+")";
+        }
+    }
+
+
+
+    var inputObjs = getElement("input");
+
+    for (var i = 0; i < inputObjs.length; i++) {
+       inputObjs[i].addEventListener("click",f1(),false);
+
+    }
+
+
+</script>
+
+</body>
+</html>

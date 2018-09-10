@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+ <script>
+   function Person1(sex,weight){
+   
+   this.sex=sex;
+   this.weight=weight;
+
+
+   }
+    
+  Person1.prototype.eat=function(){
+   console.log("I am eating");
+
+  }  
+  
+  Person1.prototype.height="178cm";
+  Person1.prototype.name ="ahuang";
+
+  Person1.prototype.play=function(){
+   
+   console.log("I am play!");
+
+  }
+
+  var person2={};
+
+  for( var key in Person1.prototype)
+  {
+       person2[key]=Person1.prototype[key];
+  }
+      
+      // console.dir(person2);
+
+      person2.eat();
+
+      person2.play();       
+
+
+ </script>
+
+
+	
+</body>
+</html>

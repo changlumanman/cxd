@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+<input type="button" value="摇起来" id="btn1"/>
+<input type="button" value="停止" id="btn2" />
+<div id="dv">
+    <img src="../images/zx1.jpg" alt="">
+    <img src="../images/zx2.jpg" alt="">
+
+</div>
+
+
+<script src="common.js"></script>
+<script>
+    getElement("btn1").onclick=function () {
+
+            timeId=setInterval(function () {
+            var x=parseInt(Math.random()*100+1);
+            var y=parseInt(Math.random()*100+1);
+            getElement("dv").style.marginLeft=x+"px";
+            getElement("dv").style.marginTop=y+"px";
+
+
+        },300);
+    };
+
+
+    document.getElementById("btn2").onclick=function () {
+
+        window.clearInterval(timeId);
+
+    }
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

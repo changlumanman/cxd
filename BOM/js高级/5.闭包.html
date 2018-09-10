@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+
+	<script>
+       // 闭包：函数闭包，对象闭包
+       
+       //1.函数闭包
+           
+        function f1(){
+           var num = 10;
+
+           function f2(){
+         console.log(num)
+
+
+           }
+           f2();
+
+
+        }
+
+        f1();
+
+
+   //2.对象闭包     
+     
+     function f3(){
+    
+       var name = "nannan";
+
+        var obj={
+            
+            name : name
+
+        };
+      console.log(obj.name);
+
+
+     }
+
+     f3();
+
+
+
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>
