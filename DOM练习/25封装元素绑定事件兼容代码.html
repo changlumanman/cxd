@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击" id="btn" />
+<input type="button" value="去帮" id="btn1" />
+<script src="common.js"></script>
+<!--<script>-->
+
+<!--function addEventListener(element,type,fn) {-->
+    <!--if(element.addEventListener){-->
+        <!--element.addEventListener(type,fn,false);-->
+    <!--}else if (element.attachEvent){-->
+        <!--element.attachEvent("on"+type,fn)-->
+    <!--}else {-->
+        <!--element["on"+type]=fn;-->
+    <!--}-->
+<!--}-->
+
+    <!--addEventListener(getElement("btn"),"click",function () {-->
+    <!--console.log("");-->
+<!--});-->
+
+<!--</script>-->
+<script>
+    //绑定兼容代码
+    function addEvent(element,type,fn) {
+        if(element.addEventListener){
+            element.addEventListener(type,fn,false);
+
+        }else if(element.attachEvent){
+            element.attachEvent("on"+type,fn);
+        }else{
+            element["on"+type]=fn;
+        }
+
+    }
+//    var obj=document.getElementById("btn");
+//    addEvent(obj,"click",function () {
+//        console.log("陈旭东");
+    //   })
+  //解绑兼容代码
+    function removeEvent(element,type,fn) {
+        if(element.removeEventListener){
+            element.removeEventListener(type,fn,false);
+
+        }else if(element.detachEvent){
+            element.detachEvent("on"+type,fn);
+        }else{
+            element["on"+type]=null;
+        }
+
+    }
+
+    function f1() {
+        console.log("第一个");
+    }
+    function  f2() {
+        console.log("第二个")
+    }
+
+    addEvent(getElement("btn"),"click",f1);
+    addEvent(getElement("btn"),"click",f2);
+    getElement("btn1").onclick=function () {
+        removeEvent(getElement("btn"),"click",f2);
+    };
+
+
+
+
+
+</script>
+
+</body>
+</html>

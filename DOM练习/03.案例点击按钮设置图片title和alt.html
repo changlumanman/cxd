@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn"  value="改变标签" />
+<img src="../images/r.jpg" title="haha" alt="" width="300" height="400" />
+
+<script>
+    document.getElementById("btn").onclick=function () {
+         var imgObj=document.getElementsByTagName("img");
+        imgObj[0].title="哈哈";
+        imgObj[0].alt="霍霍";
+    }
+
+
+
+</script>
+
+</body>
+</html>

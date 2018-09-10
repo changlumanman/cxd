@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        background-repeat: no-repeat;
+    }
+</style>
+<body>
+<div id="dv">
+    <img src="../images/psb1.jpg" alt="" width="96px" height="54px">
+    <img src="../images/psb2.jpg" alt="" width="96px" height="54px">
+    <img src="../images/psb3.jpg" alt="" width="96px" height="54px">
+    
+</div>
+
+
+<script>
+    var objs=document.getElementById("dv").children;
+    for(var i=0;i<objs.length;i++){
+        objs[i].onclick=function () {
+            document.body.style.backgroundImage="url("+this.src+")";
+
+        }
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

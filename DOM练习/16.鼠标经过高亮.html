@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+    padding: 0;
+    }
+    ul{
+        list-style: none;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+<ul>
+    <li>香蕉</li>
+    <li>苹果</li>
+    <li>菠萝</li>
+    <li>凤梨</li>
+
+</ul>
+
+
+<script>
+    var list=document.getElementsByTagName("li");
+    for(var i=0;i<list.length;i++){
+        list[i].onmouseover=function () {
+            this.style.backgroundColor="red";
+        };
+        list[i].onmouseout=function () {
+            this.style.backgroundColor="";
+
+        };
+
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

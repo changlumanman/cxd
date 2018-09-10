@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="点击" />
+<div id="di"></div>
+<script src="common.js"></script>
+<script>
+    getElement("btn").onclick=function () {
+        getElement("di").style.width="200px";
+        getElement("di").style.height="200px";
+        getElement("di").style.backgroundColor="pink";
+
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        div{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点击变色" id="btn"/>
+<div id="dv">
+
+     <span>这是一个span</span>
+      <p>这是一个p</p>
+    <span>这是一个span</span>
+    <p>这是一个p</p>
+    <span>这是一个span</span>
+    <p>这是一个p</p>
+    <span>这是一个span</span>
+
+</div>
+
+<script src="common.js"></script>
+<script>
+    getElement("btn").onclick=function () {
+        var obj1 =getElement("dv");
+        var nodes=obj1.childNodes;
+        for(var i=0;i<nodes.length;i++){
+            if (nodes[i].nodeType==1 && nodes[i].nodeName=="P"){
+
+                nodes[i].style.backgroundColor="red";
+            }
+
+
+        }
+    };
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+   *{
+       margin: 0px;
+       padding: 0px;
+   }
+    td{
+        width: 100px;
+        height: 30px;
+       margin-left: 40px;
+        display: inline-block;
+    }
+
+    thead{
+        background: skyblue;
+    }
+    table{
+        border: 1px solid #000000;
+    }
+</style>
+<body>
+<div>
+    <table>
+    <thead>
+    <tr>
+        <td>
+            <input type="checkbox" id="selectAll"/>
+        </td>
+        <td>
+            菜名
+        </td>
+        <td>
+            酒店
+        </td>
+    </tr>
+    </thead>
+
+    <tbody id="tb">
+    <tr>
+        <td>
+            <input type="checkbox" />
+        </td>
+        <td>
+            青菜
+        </td>
+        <td>
+            北京饭店
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" />
+        </td>
+        <td>
+            蔬菜
+        </td>
+        <td>
+            上海饭店
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            <input type="checkbox" />
+        </td>
+        <td>
+            藤菜
+        </td>
+        <td>
+            和平饭店
+        </td>
+    </tr>
+    </tbody>
+
+
+
+    </table>
+</div>
+<script src="common.js"></script>
+<script>
+    var ckAll=getElement("selectAll");
+    var cks=document.getElementById("tb").getElementsByTagName("input");
+    ckAll.onclick=function () {
+        for(var i=0;i<cks.length;i++){
+            cks[i].checked=this.checked;
+        }
+
+    };
+
+    for(var i=0;i<cks.length;i++){
+        cks[i].onclick=function () {
+            var flag=true;
+
+            for(var j=0;j<cks.length;j++){
+                if(!cks[j].checked){
+                    flag=false;
+                    break;
+                }
+            }
+            ckAll.checked=flag;
+        };
+    }
+
+
+</script>
+</body>
+</html>

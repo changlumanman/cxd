@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点我" />
+<input type="button" value="点我" />
+<input type="button" value="点我" />
+<input type="button" value="点我" />
+<input type="button" value="点我" />
+<input type="button" value="点我" />
+<input type="button" value="点我" />
+
+<script>
+    var btns=document.getElementsByTagName("input");
+    for(var i=0;i<btns.length;i++){             /*for循环在浏览器打开时就已完成循环   onclick在点击时才会执行*/
+        btns[i].onclick=function () {
+            for(var j=0;j<btns.length;j++){
+               btns[j].value="点我";
+            }
+            this.value="被点";  //不能使用btns[i]，for循环已完成，i=length，找不到对于btn
+        };
+
+    }
+
+</script>
+
+
+
+</body>
+</html>

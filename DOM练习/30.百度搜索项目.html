@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+
+    <input type="text" id="txt" />
+    <input type="button"  value="搜索" id="btn" />
+
+</div>
+
+
+<script src="common.js"></script>
+<script>
+    var arrays=["小张是第一个","小王是第二个","小陈是第三个","苹果8plus","苹果X"];
+
+      document.getElementById("txt").onkeyup=function () {
+          if(getElement("dv")){
+              getElement("box").removeChild(dvObj);
+          }
+
+
+          var text=this.value;
+          var tempArr=[];
+          for(var i=0;i<arrays.length;i++){
+              if (arrays[i].indexOf(text)==0){
+                tempArr.push(arrays[i]);
+              }
+          }
+         console.log(tempArr);
+
+          if(this.value.length==0 || tempArr.length==0){
+              if (getElement("dv")){
+                 getElement("box").removeChild(getElement("dv"));
+              }
+                 return;
+          }
+
+          var dvObj=document.createElement("div");
+          getElement("box").appendChild(dvObj);
+          dvObj.id="dv";
+          dvObj.style.width="350px";
+          dvObj.style.height="100px";
+          dvObj.style.border="1px solid green";
+
+          for (var i=0;i<tempArr.length;i++) {
+              var pObj = document.createElement("p");
+              dvObj.appendChild(pObj);
+              pObj.innerText = tempArr[i];
+              pObj.style.padding = 0;
+              pObj.style.margin = 0;
+              pObj.style.cursor = "pointer";
+              pObj.style.marginTop = "5px";
+              pObj.style.marginLeft = "5px";
+
+              pObj.onmouseover = function () {
+                  this.style.backgroundColor = "red";
+              };
+
+              pObj.onmouseout = function () {
+                  this.style.backgroundColor = "";
+              };
+          }
+
+      }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

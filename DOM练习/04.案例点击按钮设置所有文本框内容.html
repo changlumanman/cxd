@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="改变文本框" id="btn" /><br />
+<input type="text" value="111"/><br />
+<input type="text"value="" /><br />
+<input type="text"value="" /><br />
+<input type="text"value="" /><br />
+<input type="text"value="" /><br />
+<input type="text"value="" /><br />
+<input type="text"value="" /><br />
+
+<script>
+    document.getElementById("btn").onclick=function () {
+        var inputs = document.getElementsByTagName("input");
+        for (var i=0;i<inputs.length;i++) {
+            if (inputs[i].type != "button") {
+               inputs[i].value="大吉大利今晚吃鸡";
+            }
+            //inputs[i].value="大吉大利今晚吃鸡";
+        }
+    };
+
+</script>
+
+</body>
+</html>

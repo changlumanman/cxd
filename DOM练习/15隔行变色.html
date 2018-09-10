@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+
+        *{
+            margin: 0;
+        padding: 0;
+        }
+        li{
+            list-style: none;
+            width: 300px;
+        }
+ul{
+    margin: 20px 300px;
+}
+
+
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="点击变色" />
+<br />
+<ul id="uu">
+    <li>奔驰</li>
+    <li>宝马</li>
+    <li>保时捷</li>
+    <li>马萨拉蒂</li>
+    <li>兰博基尼</li>
+    <li>路虎</li>
+
+</ul>
+
+<script>
+    document.getElementById("btn").onclick=function () {
+        var list=document.getElementsByTagName("li");
+        if (this.value=="点击变色"){
+            for(var i=0;i<list.length;i++){
+                if (i%2==0){
+                    list[i].style.backgroundColor="red";
+                }else {
+                    list[i].style.backgroundColor="yellow";
+                }
+            }
+            this.value="不变色";
+
+        }else if( this.value=="不变色"){
+            for(var i=0;i<list.length;i++){
+                list[i].style.backgroundColor="";
+            }
+            this.value="点击变色";
+        }
+
+
+
+
+    };
+
+
+
+</script>
+
+</body>
+</html>

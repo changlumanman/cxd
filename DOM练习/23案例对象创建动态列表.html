@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+    }
+    ul{
+        cursor: pointer;
+    }
+
+</style>
+<body>
+<input type="button" value="创建列表" id="btn" />
+<div id="dv"></div>
+
+<script src="common.js"></script>
+<script>
+    var names=["张三","李四","王麻子","陈五","刘二"];
+    getElement("btn").onclick=function () {
+      var urObj=document.createElement("ul");
+        getElement("dv").appendChild(urObj);
+
+        for(var i=0;i<names.length;i++){
+            var liObj=document.createElement("li");
+            liObj.innerText=names[i];
+            urObj.appendChild(liObj);
+          urObj.onmouseover=function () {
+                urObj.style.backgroundColor="red";
+            };
+           urObj.onmouseout=function () {
+                urObj.style.backgroundColor="";
+            }
+        }
+
+
+    };
+
+//    var liList=document.getElementsByTagName("li");
+//    for(var i=0;i<liList.length;i++){
+//        liList[i].onclick=function () {
+//            this.style.backgroundColor="red";
+//        };
+//        liList[i].onmouseout=function () {
+//            this.style.backgroundColor="";
+//        }
+//    }
+
+
+
+</script>
+</body>
+</html>

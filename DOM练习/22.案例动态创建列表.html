@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn" />
+<div id="dv"></div>
+
+
+<script src="common.js"></script>
+
+<script>
+    var names=["张三","李四","王麻子","陈五","刘二"];
+    document.getElementById("btn").onclick=function () {
+        var str="<ul>";
+        for (var i=0;i<names.length;i++){
+            str+="<li>"+names[i]+"</li>";
+        }
+        str+="</ul>";
+      getElement("dv").innerHTML=str;
+    };
+
+</script>
+</body>
+</html>

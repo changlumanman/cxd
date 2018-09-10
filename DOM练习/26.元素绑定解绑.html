@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="点击" id="btn1" />
+<input type="button" value="解绑" id="btn2" />
+<!--<script>-->
+    <!--document.getElementById("btn1").onclick=function () {-->
+        <!--console.log("第一个");-->
+
+
+    <!--};-->
+
+    <!--document.getElementById("btn2").onclick=function () {-->
+        <!--document.getElementById("btn1").onclick=null;-->
+    <!--}-->
+
+<!--</script>-->
+
+<script>
+    function f1() {
+        console.log("第一个")
+    }
+    function f2() {
+        console.log("第二个")
+    }
+    document.getElementById("btn1").addEventListener("click",f1,false);
+    document.getElementById("btn1").addEventListener("click",f2,false);
+
+    document.getElementById("btn2").addEventListener("click",function () {
+      document.getElementById("btn1").removeEventListener("click",f2,false);
+
+    },false)
+
+</script>
+
+
+</body>
+</html>

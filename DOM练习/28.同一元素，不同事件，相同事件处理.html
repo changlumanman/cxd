@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="点击" id="btn" />
+
+
+<script src="common.js"></script>
+<script>
+    getElement("btn").onclick=f1;
+    getElement("btn").onmouseover=f1;
+    getElement("btn").onmouseout=f1;
+
+    function f1(e) {
+        switch (e.type){
+            case "click" :
+                alert("多帅哦");
+                break;
+            case  "mouseover":
+          this.style.backgroundColor="red";
+                break;
+            case "mouseout":
+                this.style.backgroundColor="green";
+                break;
+
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

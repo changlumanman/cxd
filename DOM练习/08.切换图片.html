@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="切换图片" id="btn" />
+<img src="../images/r.jpg" id="im" />
+
+
+<script>
+
+    function getElement(id) {
+       var obj=document.getElementById(id);
+        return obj;
+    }
+
+
+    getElement("btn").onclick=function () {
+        getElement("im").src="../images/l.jpg";
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

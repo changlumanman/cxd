@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉框</title>
+</head>
+<body>
+<input type="button" id="btn" value="选择你喜欢的水果">
+<select name="" id="sel">
+    <option value="1">香蕉</option>
+    <option value="2" id="opt">榴莲</option>
+    <option value="3">苹果</option>
+    <option value="4">橘子</option>
+
+
+</select>
+<script src="common.js"> </script>
+<script>
+    getElement("btn").onclick=function () {
+        getElement("opt").selected=true;
+
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="uList">
+
+    <li>第1个</li>
+    <li>第2个</li>
+    <li>第3个</li>
+    <li id="four">第4个</li>
+    <li>第5个</li>
+    <li>第6个</li>
+    <li>第7个</li>
+    <li>第8个</li>
+
+</ul>
+
+<script src="common.js"></script>
+<script>
+//获取父级元素下的第一个子元素
+    function getFirstElement(element) {
+        if (element.firstElementChild){
+            return element.firstElementChild;
+        }else {
+            var node=element.firstChild;//第一个节点
+            while (node&&node.nodeType!=1){
+                node=node.nextSibling;
+
+            }
+            return node;
+        }
+
+
+    }
+
+//获取父级元素的最后一个子元素
+   function getLastElement(element) {
+       if (element.lastElementChild){
+           return element.lastElementChild;
+       }else {
+           var node=element.lastChild;
+           while (node&&node.nodeType!=1){
+               node=node.previousSibling;
+           }
+           return node;
+       }
+
+   }
+
+//获取某个元素的前一个元素
+   function getPreviousElement(element) {
+       if(element.previousElementSibling){
+           return element.previousElementSibling;
+       }else{
+           var node=element.previousElementSibling;
+           while(node&&node.nodeType!=1) {
+               node=node.previousSibling;
+           }
+           return node;
+       }
+   }
+
+//某元素的后一个元素
+      function getNextElement(element) {
+
+          if(element.nextElementSibling){
+              return element.nextElementSibling;
+          }else {
+              var node=element.nextSibling;
+              while(node&&node.nodeType!=1){
+                  node=node.nextSibling;
+              }
+              return node;
+          }
+}
+
+
+    console.log(getFirstElement(getElement("uList")));
+    console.log(getLastElement(getElement("uList")));
+    console.log(getPreviousElement(getElement("four")));
+    console.log(getNextElement(getElement("four")));
+</script>
+
+
+</body>
+</html>

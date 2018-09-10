@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #di{
+            width:200px;
+            height: 200px;
+            background-color: pink;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+<input type="button" id="btn" value="显示" />
+<div id="di" ></div>
+
+
+<script src="common.js"></script>
+<script>
+    getElement("btn").onclick=function () {
+         if (getElement("btn").value=="显示"){
+             getElement("di").style.display="none";
+             getElement("btn").value="隐藏";
+
+         }else if (getElement("btn").value=="隐藏"){
+             getElement("di").style.display="block";
+             getElement("btn").value="显示";
+
+         }
+
+    }
+
+
+</script>
+</body>
+</html>

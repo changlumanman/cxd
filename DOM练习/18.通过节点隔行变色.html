@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<div id="dv">
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+
+</div>
+<script>
+     var count=0;
+   var nodes = document.getElementById("dv").childNodes;
+    for(var i=0;i<nodes.length;i++){
+        if(nodes[i].nodeType==1 && nodes[i].nodeName=="P"){
+            nodes[i].style.backgroundColor=count%2?"red":"yellow";
+            count++;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
